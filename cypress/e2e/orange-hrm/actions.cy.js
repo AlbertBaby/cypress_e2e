@@ -1,18 +1,19 @@
 /// <reference types="cypress" />
-import editor from "C:/Users/CYBERWORLD/Downloads/Personal Files/Project/Cypress-orangeHRM/cypress/Selectors/HomePage.sel"
+import editor from "C:\\Users\\CYBERWORLD\\Downloads\\Personal Files\\Project\\Cypress-orangeHRM\\cypress\\Selectors\\HomePage.sel.js"
 
 describe('Actions on the LinkedIn page', function() {
     
   beforeEach(() => {
       cy.visit('https://www.linkedin.com/')
-      // cy.viewport('samsung-s10')
-      cy.get(editor.imageField).click
+      cy.viewport('samsung-s10')
     })
   
     // https://on.cypress.io/interacting-with-elements
   
     it('.type() - type into a DOM element', () => {
       // https://on.cypress.io/type
+      cy.get("a.btn-md mb-1.5 mr-[6px] flex items-center w-max float-left btn-secondary")
+      .click();
       // cy.contains(editor.title).should('exist')
       cy.get(editor.search_job_name).type("visa").should('have.value','visa')
       cy.get(editor.search_job_area).type("United states").should('have.value','United states')
